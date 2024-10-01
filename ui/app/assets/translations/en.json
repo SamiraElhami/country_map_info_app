@@ -1,0 +1,9 @@
+{
+  "login_screen": {
+    "title": "Espace consultant",
+    "email_hint": "Email",
+    "password_hint": "Mot de passe",
+    "forget_txt": "Mot de passe oublié?",
+    "btn_txt": "Se connecter"
+  }
+}

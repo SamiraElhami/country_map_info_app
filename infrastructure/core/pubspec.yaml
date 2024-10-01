@@ -1,0 +1,78 @@
+name: core
+description: "core project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  app:
+    path: ../../ui/app
+
+  cupertino_icons: ^1.0.8
+
+  #multi_language
+  easy_localization: ^3.0.7
+  json_api: ^8.1.0
+
+  #shared_pref
+  shared_preferences: ^2.0.17
+  flutter_secure_storage: ^9.0.0
+
+  #navigation
+  auto_route: ^9.2.2
+
+  #state_management
+  flutter_bloc: ^8.1.6
+  provider: ^6.1.2
+  freezed_annotation: ^2.4.4
+  rxdart: ^0.28.0
+
+  # Dependency Injection
+  get_it: ^7.1.4
+  injectable: ^2.1.0
+  font_awesome_flutter: ^10.7.0
+  bloc: ^8.1.4
+  equatable: ^2.0.5
+
+  #design
+  material_dialogs: ^1.1.4
+  intl_phone_number_input: ^0.7.3+1
+  multi_select_flutter: ^4.1.3
+  dropdown_textfield: ^1.0.8
+  loading_animation_widget: ^1.2.0+4
+  salomon_bottom_bar: ^3.3.1
+  expansion_tile_group: ^2.1.0
+  material_dialog: ^1.0.0-nullsafety.1
+  page_route_animator: ^1.0.4
+  internet_connection_checker: ^1.0.0+1
+  dartz: ^0.10.1
+  path_provider: ^2.1.4
+  http_interop_http: ^0.9.0
+  dev: ^1.0.0
+  http: ^1.2.2
+  flutter_screenutil: ^5.9.3
+  async: ^2.11.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+  build_runner: ^2.4.11
+  auto_route_generator: ^9.0.0
+  freezed: ^2.5.7
+  json_serializable: ^6.8.0
+  injectable_generator: ^2.6.2
+
+fonts:
+  - assets/fonts
+
+flutter:
+  uses-material-design: true

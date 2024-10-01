@@ -1,0 +1,6 @@
+# melos_managed_dependency_overrides: core,feature
+dependency_overrides:
+  core:
+    path: ../../infrastructure/core
+  feature:
+    path: ../feature
