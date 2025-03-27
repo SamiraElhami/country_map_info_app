@@ -1,4 +1,4 @@
-name: driver_app
+name: country_map_info_app
 
 versioning:
   mode: independent
@@ -23,7 +23,6 @@ scripts:
       melos bootstrap
       melos run build:example_ios_pub --no-select
       melos run build:example_android_pub --no-select
-    #      melos run build:example_web --no-select
     description: Build all example apps
 
   build:example_ios:
@@ -129,7 +128,7 @@ scripts:
       melos exec -c 6 --fail-fast -- \
         "flutter test --no-pub --reporter compact --no-test-assets"
     description: Run `flutter test` for a specific package.
-    select-package:
+    packageFilters:
       dir-exists:
         - test
       ignore:
@@ -163,7 +162,7 @@ scripts:
   codegen:selective:
     run: melos exec -c 1 --depends-on="build_runner" -- dart run build_runner build --delete-conflicting-outputs
     description: Run code generation using build_runner in a specific package
-    select-package:
+    packageFilters:
       depends-on: "build_runner"
 
 environment:

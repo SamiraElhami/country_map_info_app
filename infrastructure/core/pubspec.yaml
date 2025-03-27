@@ -14,6 +14,9 @@ dependencies:
   app:
     path: ../../ui/app
 
+  feature:
+    path: ../../ui/feature
+
   cupertino_icons: ^1.0.8
 
   #multi_language
@@ -38,26 +41,18 @@ dependencies:
   injectable: ^2.1.0
   font_awesome_flutter: ^10.7.0
   bloc: ^8.1.4
-  equatable: ^2.0.5
 
   #design
-  material_dialogs: ^1.1.4
-  intl_phone_number_input: ^0.7.3+1
-  multi_select_flutter: ^4.1.3
-  dropdown_textfield: ^1.0.8
-  loading_animation_widget: ^1.2.0+4
-  salomon_bottom_bar: ^3.3.1
-  expansion_tile_group: ^2.1.0
-  material_dialog: ^1.0.0-nullsafety.1
-  page_route_animator: ^1.0.4
-  internet_connection_checker: ^1.0.0+1
+  loading_animation_widget: ^1.3.0
   dartz: ^0.10.1
-  path_provider: ^2.1.4
-  http_interop_http: ^0.9.0
   dev: ^1.0.0
-  http: ^1.2.2
   flutter_screenutil: ^5.9.3
-  async: ^2.11.0
+  toastification: ^2.3.0
+  flutter_dotenv: ^5.2.1
+  dio: ^5.7.0
+  dartx: ^1.2.0
+  connectivity_plus: ^6.1.2
+  package_info_plus: ^8.1.3
 
 dev_dependencies:
   flutter_test:

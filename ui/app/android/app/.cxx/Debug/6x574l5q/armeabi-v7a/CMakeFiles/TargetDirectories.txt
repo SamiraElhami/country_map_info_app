@@ -1,0 +1,2 @@
+/Users/samiraelhamy/Desktop/sample_proj/Sample/ui/app/android/app/.cxx/Debug/6x574l5q/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/samiraelhamy/Desktop/sample_proj/Sample/ui/app/android/app/.cxx/Debug/6x574l5q/armeabi-v7a/CMakeFiles/rebuild_cache.dir

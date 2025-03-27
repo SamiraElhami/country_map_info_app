@@ -1,6 +1,7 @@
 import 'package:app/app.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'dart:ui' as ui;
 
 abstract class BasePageState<T extends StatefulWidget, B extends BaseBloc>
     extends BasePageStateDelegate<T, B> with LogMixin {}
@@ -36,10 +37,9 @@ abstract class BasePageStateDelegate<T extends StatefulWidget,
   @override
   Widget build(BuildContext context) {
     if (!isAppWidget) {
-      // AppDimen.of(context);
-      // AppColors.of(context);
+      AppDimen.of(context);
+      AppColors.of(context);
     }
-
     return Provider(
       create: (context) => navigator,
       child: MultiBlocProvider(
@@ -57,31 +57,37 @@ abstract class BasePageStateDelegate<T extends StatefulWidget,
           child: buildPageListeners(
             child: isAppWidget
                 ? buildPage(context)
-                : Stack(
-                    children: [
-                      buildPage(context),
-                      BlocBuilder<CommonBloc, CommonState>(
-                        buildWhen: (previous, current) =>
-                            previous.isLoading != current.isLoading,
-                        builder: (context, state) => Visibility(
-                          visible: state.isLoading,
-                          child: buildPageLoading(),
-                        ),
+                : Directionality(
+              textDirection: ui.TextDirection.ltr,
+                  child: Stack(
+                        children: [
+                          buildPage(context),
+                          BlocBuilder<CommonBloc, CommonState>(
+                            buildWhen: (previous, current) =>
+                                previous.isLoading != current.isLoading,
+                            builder: (context, state) => Visibility(
+                              visible: state.isLoading,
+                              child: buildPageLoading(),
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                ),
+                ),
           ),
         ),
-      ),
     );
   }
 
   Widget buildPageListeners({required Widget child}) => child;
 
-  Widget buildPageLoading() => Center(
-        child: LoadingAnimationWidget.horizontalRotatingDots(
-            color: AppPalette.amber, size: 100),
-      );
+  Widget buildPageLoading() => Container(
+    color: AppPalette.black.withValues(alpha: 0.6),
+    child: Center(
+      child: LoadingAnimationWidget.fourRotatingDots(
+          color: AppPalette.darkGrey, size: 100),
+    ),
+  );
 
   Widget buildPage(BuildContext context);
 

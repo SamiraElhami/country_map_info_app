@@ -31,7 +31,6 @@ abstract class $ExceptionEmittedCopyWith<$Res> {
   factory $ExceptionEmittedCopyWith(
           ExceptionEmitted value, $Res Function(ExceptionEmitted) then) =
       _$ExceptionEmittedCopyWithImpl<$Res, ExceptionEmitted>;
-
   @useResult
   $Res call({AppExceptionWrapper appExceptionWrapper});
 }
@@ -43,7 +42,6 @@ class _$ExceptionEmittedCopyWithImpl<$Res, $Val extends ExceptionEmitted>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -69,7 +67,6 @@ abstract class _$$ExceptionEmittedImplCopyWith<$Res>
   factory _$$ExceptionEmittedImplCopyWith(_$ExceptionEmittedImpl value,
           $Res Function(_$ExceptionEmittedImpl) then) =
       __$$ExceptionEmittedImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({AppExceptionWrapper appExceptionWrapper});
@@ -176,7 +173,6 @@ abstract class $LoadingVisibilityEmittedCopyWith<$Res> {
   factory $LoadingVisibilityEmittedCopyWith(LoadingVisibilityEmitted value,
           $Res Function(LoadingVisibilityEmitted) then) =
       _$LoadingVisibilityEmittedCopyWithImpl<$Res, LoadingVisibilityEmitted>;
-
   @useResult
   $Res call({bool isLoading});
 }
@@ -189,7 +185,6 @@ class _$LoadingVisibilityEmittedCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -216,7 +211,6 @@ abstract class _$$LoadingVisibilityEmittedImplCopyWith<$Res>
           _$LoadingVisibilityEmittedImpl value,
           $Res Function(_$LoadingVisibilityEmittedImpl) then) =
       __$$LoadingVisibilityEmittedImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({bool isLoading});
@@ -326,7 +320,6 @@ class _$ForceLogoutButtonPressedCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -371,7 +364,7 @@ class _$ForceLogoutButtonPressedImpl
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'ForceLogoutButtonPressed'));
+    properties..add(DiagnosticsProperty('type', 'ForceLogoutButtonPressed'));
   }
 
   @override

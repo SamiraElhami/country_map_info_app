@@ -1,20 +1,33 @@
 import 'package:core/core.dart';
 
 enum LanguageCode {
-  en(
-      localeCode: LocaleConstants.en,
-      serverValue: ServerRequestResponseConstants.en),
-  fr(
-      localeCode: LocaleConstants.fr,
-      serverValue: ServerRequestResponseConstants.fr);
+  en,
+  fr,
+}
 
-  const LanguageCode({
-    required this.localeCode,
-    required this.serverValue,
-  });
+enum ErrorResponseMapperType {
+  jsonObject,
+  jsonArray,
+}
 
-  final String localeCode;
-  final String serverValue;
+enum SuccessResponseMapperType {
+  dataJsonObject,
+  dataJsonArray,
+  jsonObject,
+  jsonArray,
+  resultsJsonArray,
+}
 
-  static LanguageCode get defaultValue => en;
+enum EnvVar {
+  apiKey(key: 'API_KEY');
+
+  const EnvVar({required this.key});
+
+  final String key;
+}
+
+enum PopupType {
+  android,
+  ios,
+  adaptive,
 }

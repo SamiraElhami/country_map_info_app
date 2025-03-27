@@ -29,6 +29,7 @@ class ExceptionMessageMapper {
                 '${exception.rootException}';
           case RemoteExceptionKind.refreshTokenFailed:
             return 'error_msg.tech_problem'.tr();
+
         }
       case AppExceptionType.parse:
         return 'error_msg.tech_problem'.tr();
@@ -53,6 +54,8 @@ class ExceptionMessageMapper {
             return 'error_msg.wrong_code_format'.tr();
           case ValidationExceptionKind.nonIdenticalPassword:
             return 'error_msg.non_identical_password'.tr();
+          case ValidationExceptionKind.countryNotFound:
+           return 'error_msg.country_not_found'.tr();
         }
     }
   }

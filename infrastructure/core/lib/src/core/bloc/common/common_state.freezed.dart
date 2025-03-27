@@ -18,9 +18,6 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$CommonState {
   AppExceptionWrapper? get appExceptionWrapper =>
       throw _privateConstructorUsedError;
-
-  int get loadingCount => throw _privateConstructorUsedError;
-
   bool get isLoading => throw _privateConstructorUsedError;
 
   /// Create a copy of CommonState
@@ -35,12 +32,8 @@ abstract class $CommonStateCopyWith<$Res> {
   factory $CommonStateCopyWith(
           CommonState value, $Res Function(CommonState) then) =
       _$CommonStateCopyWithImpl<$Res, CommonState>;
-
   @useResult
-  $Res call(
-      {AppExceptionWrapper? appExceptionWrapper,
-      int loadingCount,
-      bool isLoading});
+  $Res call({AppExceptionWrapper? appExceptionWrapper, bool isLoading});
 }
 
 /// @nodoc
@@ -50,7 +43,6 @@ class _$CommonStateCopyWithImpl<$Res, $Val extends CommonState>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -60,7 +52,6 @@ class _$CommonStateCopyWithImpl<$Res, $Val extends CommonState>
   @override
   $Res call({
     Object? appExceptionWrapper = freezed,
-    Object? loadingCount = null,
     Object? isLoading = null,
   }) {
     return _then(_value.copyWith(
@@ -68,10 +59,6 @@ class _$CommonStateCopyWithImpl<$Res, $Val extends CommonState>
           ? _value.appExceptionWrapper
           : appExceptionWrapper // ignore: cast_nullable_to_non_nullable
               as AppExceptionWrapper?,
-      loadingCount: null == loadingCount
-          ? _value.loadingCount
-          : loadingCount // ignore: cast_nullable_to_non_nullable
-              as int,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -86,13 +73,9 @@ abstract class _$$CommonStateImplCopyWith<$Res>
   factory _$$CommonStateImplCopyWith(
           _$CommonStateImpl value, $Res Function(_$CommonStateImpl) then) =
       __$$CommonStateImplCopyWithImpl<$Res>;
-
   @override
   @useResult
-  $Res call(
-      {AppExceptionWrapper? appExceptionWrapper,
-      int loadingCount,
-      bool isLoading});
+  $Res call({AppExceptionWrapper? appExceptionWrapper, bool isLoading});
 }
 
 /// @nodoc
@@ -109,7 +92,6 @@ class __$$CommonStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? appExceptionWrapper = freezed,
-    Object? loadingCount = null,
     Object? isLoading = null,
   }) {
     return _then(_$CommonStateImpl(
@@ -117,10 +99,6 @@ class __$$CommonStateImplCopyWithImpl<$Res>
           ? _value.appExceptionWrapper
           : appExceptionWrapper // ignore: cast_nullable_to_non_nullable
               as AppExceptionWrapper?,
-      loadingCount: null == loadingCount
-          ? _value.loadingCount
-          : loadingCount // ignore: cast_nullable_to_non_nullable
-              as int,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -132,23 +110,17 @@ class __$$CommonStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CommonStateImpl implements _CommonState {
-  const _$CommonStateImpl(
-      {this.appExceptionWrapper,
-      this.loadingCount = 0,
-      this.isLoading = false});
+  const _$CommonStateImpl({this.appExceptionWrapper, this.isLoading = false});
 
   @override
   final AppExceptionWrapper? appExceptionWrapper;
-  @override
-  @JsonKey()
-  final int loadingCount;
   @override
   @JsonKey()
   final bool isLoading;
 
   @override
   String toString() {
-    return 'CommonState(appExceptionWrapper: $appExceptionWrapper, loadingCount: $loadingCount, isLoading: $isLoading)';
+    return 'CommonState(appExceptionWrapper: $appExceptionWrapper, isLoading: $isLoading)';
   }
 
   @override
@@ -158,15 +130,12 @@ class _$CommonStateImpl implements _CommonState {
             other is _$CommonStateImpl &&
             (identical(other.appExceptionWrapper, appExceptionWrapper) ||
                 other.appExceptionWrapper == appExceptionWrapper) &&
-            (identical(other.loadingCount, loadingCount) ||
-                other.loadingCount == loadingCount) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, appExceptionWrapper, loadingCount, isLoading);
+  int get hashCode => Object.hash(runtimeType, appExceptionWrapper, isLoading);
 
   /// Create a copy of CommonState
   /// with the given fields replaced by the non-null parameter values.
@@ -180,15 +149,10 @@ class _$CommonStateImpl implements _CommonState {
 abstract class _CommonState implements CommonState {
   const factory _CommonState(
       {final AppExceptionWrapper? appExceptionWrapper,
-      final int loadingCount,
       final bool isLoading}) = _$CommonStateImpl;
 
   @override
   AppExceptionWrapper? get appExceptionWrapper;
-
-  @override
-  int get loadingCount;
-
   @override
   bool get isLoading;
 

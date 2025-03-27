@@ -24,7 +24,6 @@ mixin _$ServerError {
 
   /// server-defined message
   String? get generalMessage => throw _privateConstructorUsedError;
-
   List<ServerErrorDetail> get errors => throw _privateConstructorUsedError;
 
   /// Create a copy of ServerError
@@ -39,7 +38,6 @@ abstract class $ServerErrorCopyWith<$Res> {
   factory $ServerErrorCopyWith(
           ServerError value, $Res Function(ServerError) then) =
       _$ServerErrorCopyWithImpl<$Res, ServerError>;
-
   @useResult
   $Res call(
       {int? generalServerStatusCode,
@@ -55,7 +53,6 @@ class _$ServerErrorCopyWithImpl<$Res, $Val extends ServerError>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -96,7 +93,6 @@ abstract class _$$ServerErrorImplCopyWith<$Res>
   factory _$$ServerErrorImplCopyWith(
           _$ServerErrorImpl value, $Res Function(_$ServerErrorImpl) then) =
       __$$ServerErrorImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -167,7 +163,6 @@ class _$ServerErrorImpl implements _ServerError {
   @override
   final String? generalMessage;
   final List<ServerErrorDetail> _errors;
-
   @override
   @JsonKey()
   List<ServerErrorDetail> get errors {
@@ -231,7 +226,6 @@ abstract class _ServerError implements ServerError {
   /// server-defined message
   @override
   String? get generalMessage;
-
   @override
   List<ServerErrorDetail> get errors;
 

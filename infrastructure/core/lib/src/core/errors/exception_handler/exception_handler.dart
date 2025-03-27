@@ -1,7 +1,6 @@
 import 'package:core/core.dart';
-import 'package:core/src/core/ui/snackbar/custom_snack_bar.dart';
-import 'package:core/src/core/ui/snackbar/top_snack_bar.dart';
 import 'package:flutter/material.dart';
+import 'dart:ui' as ui;
 
 class ExceptionHandler {
   const ExceptionHandler({
@@ -17,54 +16,27 @@ class ExceptionHandler {
     String commonExceptionMessage,
   ) async {
     final msg = appExceptionWrapper.overrideMessage ?? commonExceptionMessage;
-
-    switch (appExceptionWrapper.appException.appExceptionType) {
-      case AppExceptionType.remote:
-        final exception = appExceptionWrapper.appException as RemoteException;
-        switch (exception.kind) {
-          case RemoteExceptionKind.refreshTokenFailed:
-            return _displayError(context, msg);
-          case RemoteExceptionKind.noInternet:
-          case RemoteExceptionKind.timeout:
-            return _displayError(context, msg);
-          case RemoteExceptionKind.network:
-            return _displayError(context, msg);
-          case RemoteExceptionKind.serverDefined:
-            return _displayError(context, msg);
-          case RemoteExceptionKind.serverUndefined:
-            return _displayError(context, msg);
-          case RemoteExceptionKind.badCertificate:
-            return _displayError(context, msg);
-          case RemoteExceptionKind.cancellation:
-            return _displayError(context, msg);
-          case RemoteExceptionKind.unknown:
-            return _displayError(context, msg);
-        }
-
-      case AppExceptionType.parse:
-        return _displayError(context, msg);
-      case AppExceptionType.remoteConfig:
-        return _displayError(context, msg);
-      case AppExceptionType.uncaught:
-        return;
-      case AppExceptionType.validation:
-        return _displayError(context, msg);
-    }
+    return _displayError(context, msg);
   }
 }
 
 void _displayError(BuildContext context, String msg) {
-  // late AnimationController localAnimationController;
-  showTopSnackBar(
-    Overlay.of(context),
-    CustomSnackBar.error(
-      message: msg,
-    ),
-    persistent: false,
-    // onAnimationControllerInit: (controller) =>
-    //     localAnimationController = controller,
-    dismissType: DismissType.onSwipe,
-    dismissDirection: [DismissDirection.startToEnd],
+  toastification.show(
+    direction: ui.TextDirection.ltr,
+    context: context,
+    type: ToastificationType.error,
+    style: ToastificationStyle.flat,
+    showProgressBar: false,
+    autoCloseDuration: const Duration(seconds: 5),
+    title: Text(msg, style: AppTypography.body1,),
+    alignment: Alignment.topRight,
+    animationDuration: const Duration(milliseconds: 500),
+    // animationBuilder: (context, animation, alignment, child) {
+    //   return FadeTransition(
+    //     opacity: null,
+    //     child: child,
+    //   );
+    // },
   );
 }
 

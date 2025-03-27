@@ -5,5 +5,30 @@
     "password_hint": "Mot de passe",
     "forget_txt": "Mot de passe oublié ? ",
     "btn_txt": "Se connecter"
+  },
+  "error_msg": {
+    "wrong_email_pass": "Mot de passe ou identifiant incorrect.",
+    "wrong_email_format": "Veuillez renseigner une adresse e-mail valide.",
+    "wrong_password_format": "Veuillez entrer un mots de passe valide.",
+    "fill_all_fields": "Veuillez remplir tous les champs requis pour continuer.",
+    "wrong_phone_format": "Veuillez entrer un numéro de téléphone valide.",
+    "wrong_code_format": "Veuillez entrer un code valide.",
+    "no_network": "No Network",
+    "tech_problem": "There is a technical problem.",
+    "non_identical_password": "Les mots de passe saisis ne sont pas identiques",
+    "country_not_found": "Country Not Found"
+  },
+  "dialog_msg": {
+    "ok_btn_txt": "Ok",
+    "cancel_btn_txt": "Cancel",
+    "retry_btn_txt": "Retry"
+  },
+  "country_details_screen": {
+    "sub_title_1": "Capital:",
+    "sub_title_2": "Language:",
+    "sub_title_3": "Population:",
+    "sub_title_4": "TimeZone:",
+    "sub_title_5": "Continent:",
+    "sub_title_6": "Show on Map"
   }
 }

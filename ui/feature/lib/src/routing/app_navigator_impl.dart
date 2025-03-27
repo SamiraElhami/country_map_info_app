@@ -1,24 +1,23 @@
 import 'package:core/core.dart';
 import 'package:feature/feature.dart';
+import 'package:feature/src/routing/app_router.gr.dart';
 import 'package:flutter/material.dart' as m;
-
-import 'app_router.gr.dart';
 
 @LazySingleton(as: AppNavigator)
 class AppNavigatorImpl extends AppNavigator with LogMixin {
   AppNavigatorImpl(
     this._appRouter,
-    this._appPopupInfoMapper,
     this._appRouteInfoMapper,
+    this._appPopupInfoMapper,
   );
 
-  final tabRoutes = const [MapTab(), SessionTabScreen(), ProfileTab()];
+  final tabRoutes = const [MapTab(), ListTab()];
 
   TabsRouter? tabsRouter;
 
   final AppRouter _appRouter;
-  final BasePopupInfoMapper _appPopupInfoMapper;
   final BaseRouteInfoMapper _appRouteInfoMapper;
+  final BasePopupInfoMapper _appPopupInfoMapper;
   final _popups = <AppPopupInfo>{};
 
   StackRouter? get _currentTabRouter =>
@@ -217,7 +216,6 @@ class AppNavigatorImpl extends AppNavigator with LogMixin {
     if (LogConfig.enableNavigatorObserverLog) {
       logD('removeLast');
     }
-
     return _appRouter.removeLast();
   }
 
@@ -240,15 +238,13 @@ class AppNavigatorImpl extends AppNavigator with LogMixin {
           ? _rootRouterContext
           : _currentTabContextOrRootContext,
       builder: (_) => m.PopScope(
-        canPop: false,
-        onPopInvokedWithResult: (didPop, _) async {
-          if (didPop) {
+        onPopInvokedWithResult: (didPop,_) async {
+          if(didPop) {
             return;
           }
           logD('Dialog $appPopupInfo dismissed');
           _popups.remove(appPopupInfo);
 
-          return Future.value();
         },
         child: _appPopupInfoMapper.map(appPopupInfo, this),
       ),
@@ -290,15 +286,14 @@ class AppNavigatorImpl extends AppNavigator with LogMixin {
         animation2,
       ) =>
           m.PopScope(
-        canPop: false,
-        onPopInvokedWithResult: (didPop, _) async {
-          if (didPop) {
-            return;
-          }
+            canPop: false,
+            onPopInvokedWithResult: (didPop, _) async {
+              if(didPop) {
+                return;
+              }
           logD('Dialog $appPopupInfo dismissed');
           _popups.remove(appPopupInfo);
 
-          return Future.value();
         },
         child: _appPopupInfoMapper.map(appPopupInfo, this),
       ),
@@ -308,15 +303,15 @@ class AppNavigatorImpl extends AppNavigator with LogMixin {
   }
 
   @override
-  Future<T?> showModalBottomSheet<T extends Object?>(
-    AppPopupInfo appPopupInfo, {
-    bool isScrollControlled = false,
-    bool useRootNavigator = false,
-    bool isDismissible = true,
-    bool enableDrag = true,
-    m.Color barrierColor = m.Colors.black54,
-    m.Color? backgroundColor,
-  }) {
+  Future<T?> showModalBottomSheet<T extends Object?>(AppPopupInfo appPopupInfo,
+      {
+        bool isScrollControlled = false,
+        bool useRootNavigator = false,
+        bool isDismissible = true,
+        bool enableDrag = true,
+        m.Color barrierColor = m.Colors.black54,
+        m.Color? backgroundColor,
+      }) {
     if (LogConfig.enableNavigatorObserverLog) {
       logD(
           'showModalBottomSheet $appPopupInfo, useRootNav = $useRootNavigator');
@@ -334,25 +329,5 @@ class AppNavigatorImpl extends AppNavigator with LogMixin {
       backgroundColor: backgroundColor,
       barrierColor: barrierColor,
     );
-  }
-
-  @override
-  void showErrorSnackBar(String message, {Duration? duration}) {
-    // ViewUtils.showAppSnackBar(
-    //   _rootRouterContext,
-    //   message,
-    //   duration: duration,
-    //   // backgroundColor: AppColors.current.primaryColor,
-    // );
-  }
-
-  @override
-  void showSuccessSnackBar(String message, {Duration? duration}) {
-    // ViewUtils.showAppSnackBar(
-    //   _rootRouterContext,
-    //   message,
-    //   duration: duration,
-    //   // backgroundColor: AppColors.current.primaryColor,
-    // );
   }
 }

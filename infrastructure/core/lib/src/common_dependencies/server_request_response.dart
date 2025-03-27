@@ -5,6 +5,6 @@ class ServerRequestResponseConstants {
   static const userAgentKey = 'User-Agent';
   static const bearer = 'Bearer';
 
-  static const en = 'en';
-  static const fr = 'fr';
+  // static const en = 'en';
+  // static const fr = 'fr';
 }

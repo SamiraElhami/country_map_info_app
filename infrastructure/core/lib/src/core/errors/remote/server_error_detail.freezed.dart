@@ -17,7 +17,6 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$ServerErrorDetail {
   String get detail => throw _privateConstructorUsedError;
-
   String get path => throw _privateConstructorUsedError;
 
   /// server-defined error code
@@ -44,7 +43,6 @@ abstract class $ServerErrorDetailCopyWith<$Res> {
   factory $ServerErrorDetailCopyWith(
           ServerErrorDetail value, $Res Function(ServerErrorDetail) then) =
       _$ServerErrorDetailCopyWithImpl<$Res, ServerErrorDetail>;
-
   @useResult
   $Res call(
       {String detail,
@@ -62,7 +60,6 @@ class _$ServerErrorDetailCopyWithImpl<$Res, $Val extends ServerErrorDetail>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -113,7 +110,6 @@ abstract class _$$ServerErrorDetailImplCopyWith<$Res>
   factory _$$ServerErrorDetailImplCopyWith(_$ServerErrorDetailImpl value,
           $Res Function(_$ServerErrorDetailImpl) then) =
       __$$ServerErrorDetailImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -257,7 +253,6 @@ abstract class _ServerErrorDetail implements ServerErrorDetail {
 
   @override
   String get detail;
-
   @override
   String get path;
 

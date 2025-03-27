@@ -7,7 +7,6 @@ class CustomButton extends StatelessWidget {
     this.backgroundColor = AppPalette.blue,
     this.btnTxtColor = AppPalette.white,
     this.borderColor = AppPalette.blue,
-    this.isFilter = false,
     this.padding = const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
     this.onTap,
     super.key,
@@ -18,7 +17,6 @@ class CustomButton extends StatelessWidget {
     this.backgroundColor = AppPalette.amber,
     this.btnTxtColor = AppPalette.white,
     this.borderColor = AppPalette.amber,
-    this.isFilter = false,
     this.padding = const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
     this.onTap,
     super.key,
@@ -29,7 +27,6 @@ class CustomButton extends StatelessWidget {
     this.backgroundColor = AppPalette.white,
     this.btnTxtColor = AppPalette.grey,
     this.borderColor = AppPalette.grey,
-    this.isFilter = false,
     this.padding = const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
     this.onTap,
     super.key,
@@ -40,29 +37,16 @@ class CustomButton extends StatelessWidget {
     this.backgroundColor = AppPalette.error,
     this.btnTxtColor = AppPalette.white,
     this.borderColor = AppPalette.error,
-    this.isFilter = false,
     this.padding = const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
     this.onTap,
     super.key,
   });
 
-  const CustomButton.filter({
-    this.btnText = 'cra_screen.filter',
-    this.backgroundColor = AppPalette.white,
-    this.btnTxtColor = AppPalette.black,
-    this.borderColor = AppPalette.grey,
-    this.isFilter = true,
-    this.padding = const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-    this.onTap,
-    super.key,
-  });
 
   final Color backgroundColor;
   final String btnText;
   final Color btnTxtColor;
   final Color borderColor;
-  final bool isFilter;
-
   final Function()? onTap;
   final EdgeInsets padding;
 
@@ -88,7 +72,7 @@ class CustomButton extends StatelessWidget {
             child: Text(
               btnText.tr(),
               textAlign: TextAlign.center,
-              style: AppTypography.h7.copyWith(
+              style: AppTypography.body3.copyWith(
                 color: btnTxtColor,
               ),
               overflow: TextOverflow.ellipsis,
@@ -137,15 +121,6 @@ class CustomTextButton extends StatelessWidget {
       this.onTap,
       super.key});
 
-  const CustomTextButton.add(
-      {required this.btnText,
-      this.backgroundColor = AppPalette.white,
-      this.btnTxtColor = AppPalette.grey,
-      this.borderColor = AppPalette.lightGray,
-      this.isAdd = true,
-      this.onTap,
-      super.key});
-
   final String btnText;
   final bool isAdd;
   final Function()? onTap;
@@ -155,8 +130,8 @@ class CustomTextButton extends StatelessWidget {
   final Color borderColor;
 
   @override
-  Widget build(BuildContext context) => !isAdd
-      ? TextButton(
+  Widget build(BuildContext context) =>
+       TextButton(
           onPressed: onTap,
           style: TextButton.styleFrom(
             backgroundColor: backgroundColor,
@@ -178,41 +153,8 @@ class CustomTextButton extends StatelessWidget {
               child: Text(
                 btnText.tr(),
                 textAlign: TextAlign.left,
-                style: AppTypography.body6.copyWith(color: AppPalette.black),
+                style: AppTypography.body3.copyWith(color: AppPalette.black),
               ),
-            ),
-          ),
-        )
-      : InkWell(
-          onTap: onTap,
-          child: Container(
-            height: 58,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                // color: backgroundColor,
-                border: Border.all(
-                  color: borderColor,
-                )),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15),
-                  child: Icon(
-                    FontAwesomeIcons.cloudArrowUp,
-                    color: AppPalette.darkGrey,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 15),
-                  child: Text(
-                    btnText.tr(),
-                    style:
-                        AppTypography.body6.copyWith(color: AppPalette.black),
-                  ),
-                ),
-              ],
             ),
           ),
         );

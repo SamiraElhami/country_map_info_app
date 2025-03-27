@@ -18,36 +18,39 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AppRouteInfo {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() login,
+    required TResult Function() map,
+    required TResult Function(String name) countryDetails,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? login,
+    TResult? Function()? map,
+    TResult? Function(String name)? countryDetails,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? login,
+    TResult Function()? map,
+    TResult Function(String name)? countryDetails,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_login value) login,
+    required TResult Function(_map value) map,
+    required TResult Function(_countryDetails value) countryDetails,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_login value)? login,
+    TResult? Function(_map value)? map,
+    TResult? Function(_countryDetails value)? countryDetails,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_login value)? login,
+    TResult Function(_map value)? map,
+    TResult Function(_countryDetails value)? countryDetails,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -65,9 +68,9 @@ class _$AppRouteInfoCopyWithImpl<$Res, $Val extends AppRouteInfo>
     implements $AppRouteInfoCopyWith<$Res> {
   _$AppRouteInfoCopyWithImpl(this._value, this._then);
 
-// ignore: unused_field
+  // ignore: unused_field
   final $Val _value;
-// ignore: unused_field
+  // ignore: unused_field
   final $Res Function($Val) _then;
 
   /// Create a copy of AppRouteInfo
@@ -75,18 +78,16 @@ class _$AppRouteInfoCopyWithImpl<$Res, $Val extends AppRouteInfo>
 }
 
 /// @nodoc
-abstract class _$$loginImplCopyWith<$Res> {
-  factory _$$loginImplCopyWith(
-          _$loginImpl value, $Res Function(_$loginImpl) then) =
-      __$$loginImplCopyWithImpl<$Res>;
+abstract class _$$mapImplCopyWith<$Res> {
+  factory _$$mapImplCopyWith(_$mapImpl value, $Res Function(_$mapImpl) then) =
+      __$$mapImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$loginImplCopyWithImpl<$Res>
-    extends _$AppRouteInfoCopyWithImpl<$Res, _$loginImpl>
-    implements _$$loginImplCopyWith<$Res> {
-  __$$loginImplCopyWithImpl(
-      _$loginImpl _value, $Res Function(_$loginImpl) _then)
+class __$$mapImplCopyWithImpl<$Res>
+    extends _$AppRouteInfoCopyWithImpl<$Res, _$mapImpl>
+    implements _$$mapImplCopyWith<$Res> {
+  __$$mapImplCopyWithImpl(_$mapImpl _value, $Res Function(_$mapImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of AppRouteInfo
@@ -95,18 +96,18 @@ class __$$loginImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$loginImpl implements _login {
-  const _$loginImpl();
+class _$mapImpl implements _map {
+  const _$mapImpl();
 
   @override
   String toString() {
-    return 'AppRouteInfo.login()';
+    return 'AppRouteInfo.map()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$loginImpl);
+        (other.runtimeType == runtimeType && other is _$mapImpl);
   }
 
   @override
@@ -115,27 +116,30 @@ class _$loginImpl implements _login {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() login,
+    required TResult Function() map,
+    required TResult Function(String name) countryDetails,
   }) {
-    return login();
+    return map();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? login,
+    TResult? Function()? map,
+    TResult? Function(String name)? countryDetails,
   }) {
-    return login?.call();
+    return map?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? login,
+    TResult Function()? map,
+    TResult Function(String name)? countryDetails,
     required TResult orElse(),
   }) {
-    if (login != null) {
-      return login();
+    if (map != null) {
+      return map();
     }
     return orElse();
   }
@@ -143,32 +147,177 @@ class _$loginImpl implements _login {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_login value) login,
+    required TResult Function(_map value) map,
+    required TResult Function(_countryDetails value) countryDetails,
   }) {
-    return login(this);
+    return map(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_login value)? login,
+    TResult? Function(_map value)? map,
+    TResult? Function(_countryDetails value)? countryDetails,
   }) {
-    return login?.call(this);
+    return map?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_login value)? login,
+    TResult Function(_map value)? map,
+    TResult Function(_countryDetails value)? countryDetails,
     required TResult orElse(),
   }) {
-    if (login != null) {
-      return login(this);
+    if (map != null) {
+      return map(this);
     }
     return orElse();
   }
 }
 
-abstract class _login implements AppRouteInfo {
-  const factory _login() = _$loginImpl;
+abstract class _map implements AppRouteInfo {
+  const factory _map() = _$mapImpl;
+}
+
+/// @nodoc
+abstract class _$$countryDetailsImplCopyWith<$Res> {
+  factory _$$countryDetailsImplCopyWith(_$countryDetailsImpl value,
+          $Res Function(_$countryDetailsImpl) then) =
+      __$$countryDetailsImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String name});
+}
+
+/// @nodoc
+class __$$countryDetailsImplCopyWithImpl<$Res>
+    extends _$AppRouteInfoCopyWithImpl<$Res, _$countryDetailsImpl>
+    implements _$$countryDetailsImplCopyWith<$Res> {
+  __$$countryDetailsImplCopyWithImpl(
+      _$countryDetailsImpl _value, $Res Function(_$countryDetailsImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AppRouteInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+  }) {
+    return _then(_$countryDetailsImpl(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$countryDetailsImpl implements _countryDetails {
+  const _$countryDetailsImpl({required this.name});
+
+  @override
+  final String name;
+
+  @override
+  String toString() {
+    return 'AppRouteInfo.countryDetails(name: $name)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$countryDetailsImpl &&
+            (identical(other.name, name) || other.name == name));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, name);
+
+  /// Create a copy of AppRouteInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$countryDetailsImplCopyWith<_$countryDetailsImpl> get copyWith =>
+      __$$countryDetailsImplCopyWithImpl<_$countryDetailsImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() map,
+    required TResult Function(String name) countryDetails,
+  }) {
+    return countryDetails(name);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? map,
+    TResult? Function(String name)? countryDetails,
+  }) {
+    return countryDetails?.call(name);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? map,
+    TResult Function(String name)? countryDetails,
+    required TResult orElse(),
+  }) {
+    if (countryDetails != null) {
+      return countryDetails(name);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_map value) map,
+    required TResult Function(_countryDetails value) countryDetails,
+  }) {
+    return countryDetails(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_map value)? map,
+    TResult? Function(_countryDetails value)? countryDetails,
+  }) {
+    return countryDetails?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_map value)? map,
+    TResult Function(_countryDetails value)? countryDetails,
+    required TResult orElse(),
+  }) {
+    if (countryDetails != null) {
+      return countryDetails(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _countryDetails implements AppRouteInfo {
+  const factory _countryDetails({required final String name}) =
+      _$countryDetailsImpl;
+
+  String get name;
+
+  /// Create a copy of AppRouteInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$countryDetailsImplCopyWith<_$countryDetailsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -16,5 +16,6 @@ enum ValidationExceptionKind {
   invalidCode,
   invalidPhoneNumber,
   nonIdenticalPassword,
-  emptyField
+  emptyField,
+  countryNotFound,
 }

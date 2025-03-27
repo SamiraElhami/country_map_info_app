@@ -1,9 +1,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
-        android:label="driver">
+        android:label="Country Map">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="YOUR_GOOGLE_API_KEY"
+            />
+
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
@@ -30,6 +37,17 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+
+        <service
+        android:name=".MyCarAppService"
+            android:label="Country Info"
+             android:exported="true">
+        <intent-filter>
+            <action android:name="androidx.car.app.CarAppService"/>
+            <category android:name="androidx.car.app.category.Navigation"/>
+        </intent-filter>
+    </service>
+
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and

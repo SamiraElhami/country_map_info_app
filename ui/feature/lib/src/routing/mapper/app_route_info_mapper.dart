@@ -8,6 +8,7 @@ import '../base/base_route_info_mapper.dart';
 class AppRouteInfoMapper extends BaseRouteInfoMapper {
   @override
   PageRouteInfo map(AppRouteInfo appRouteInfo) => appRouteInfo.when(
-        login: () => const LoginRoute(),
+        map: () => const MapRoute(),
+        countryDetails: (name) => CountryDetailsRoute(name: name),
       );
 }

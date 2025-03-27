@@ -1,11 +1,10 @@
 import 'dart:async';
 
-import 'package:app/app/config/app_config.dart';
-import 'package:app/app/d_app.dart';
-import 'package:app/di/app_initializer.dart';
+import 'package:app/app.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+
 
 abstract class AppStart {
   final BuildConfig buildConfig;
@@ -17,7 +16,6 @@ abstract class AppStart {
 
   Future<void> _runApp() async {
     WidgetsFlutterBinding.ensureInitialized();
-    await EasyLocalization.ensureInitialized();
 
     await AppInitializer(AppConfig.getInstance()).init();
 
@@ -25,10 +23,10 @@ abstract class AppStart {
       EasyLocalization(
         path: 'assets/translations',
         supportedLocales: const [
-          Locale('fr'), // France
+          Locale('fr'), // French
           Locale('en'), // English
         ],
-        child: const DApp(),
+        child: const SApp(),
       ),
     );
   }

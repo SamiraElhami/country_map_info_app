@@ -29,12 +29,7 @@ class CommonBloc extends BaseBloc<CommonEvent, CommonState> {
     Emitter<CommonState> emit,
   ) {
     emit(state.copyWith(
-      isLoading: state.loadingCount == 0 && event.isLoading
-          ? !(state.loadingCount == 1 && !event.isLoading ||
-              state.loadingCount <= 0)
-          : state.isLoading,
-      loadingCount:
-          event.isLoading ? state.loadingCount + 1 : state.loadingCount - 1,
+      isLoading: event.isLoading,
     ));
   }
 

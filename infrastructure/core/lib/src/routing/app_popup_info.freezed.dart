@@ -18,52 +18,49 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AppPopupInfo {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String message, Function? onPressed)
+    required TResult Function(String message, Func0<void>? onPressed)
         confirmDialog,
-    required TResult Function(String message, Function? onRetryPressed)
+    required TResult Function(String message, Func0<void>? onRetryPressed)
         errorWithRetryDialog,
-    required TResult Function() requiredLoginDialog,
+    required TResult Function(Widget? child, double? height) bottomDialog,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String message, Function? onPressed)? confirmDialog,
-    TResult? Function(String message, Function? onRetryPressed)?
+    TResult? Function(String message, Func0<void>? onPressed)? confirmDialog,
+    TResult? Function(String message, Func0<void>? onRetryPressed)?
         errorWithRetryDialog,
-    TResult? Function()? requiredLoginDialog,
+    TResult? Function(Widget? child, double? height)? bottomDialog,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String message, Function? onPressed)? confirmDialog,
-    TResult Function(String message, Function? onRetryPressed)?
+    TResult Function(String message, Func0<void>? onPressed)? confirmDialog,
+    TResult Function(String message, Func0<void>? onRetryPressed)?
         errorWithRetryDialog,
-    TResult Function()? requiredLoginDialog,
+    TResult Function(Widget? child, double? height)? bottomDialog,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ConfirmDialog value) confirmDialog,
     required TResult Function(_ErrorWithRetryDialog value) errorWithRetryDialog,
-    required TResult Function(_RequiredLoginDialog value) requiredLoginDialog,
+    required TResult Function(_bottomDialog value) bottomDialog,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ConfirmDialog value)? confirmDialog,
     TResult? Function(_ErrorWithRetryDialog value)? errorWithRetryDialog,
-    TResult? Function(_RequiredLoginDialog value)? requiredLoginDialog,
+    TResult? Function(_bottomDialog value)? bottomDialog,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ConfirmDialog value)? confirmDialog,
     TResult Function(_ErrorWithRetryDialog value)? errorWithRetryDialog,
-    TResult Function(_RequiredLoginDialog value)? requiredLoginDialog,
+    TResult Function(_bottomDialog value)? bottomDialog,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -81,9 +78,9 @@ class _$AppPopupInfoCopyWithImpl<$Res, $Val extends AppPopupInfo>
     implements $AppPopupInfoCopyWith<$Res> {
   _$AppPopupInfoCopyWithImpl(this._value, this._then);
 
-// ignore: unused_field
+  // ignore: unused_field
   final $Val _value;
-// ignore: unused_field
+  // ignore: unused_field
   final $Res Function($Val) _then;
 
   /// Create a copy of AppPopupInfo
@@ -96,7 +93,7 @@ abstract class _$$ConfirmDialogImplCopyWith<$Res> {
           _$ConfirmDialogImpl value, $Res Function(_$ConfirmDialogImpl) then) =
       __$$ConfirmDialogImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String message, Function? onPressed});
+  $Res call({String message, Func0<void>? onPressed});
 }
 
 /// @nodoc
@@ -123,7 +120,7 @@ class __$$ConfirmDialogImplCopyWithImpl<$Res>
       onPressed: freezed == onPressed
           ? _value.onPressed
           : onPressed // ignore: cast_nullable_to_non_nullable
-              as Function?,
+              as Func0<void>?,
     ));
   }
 }
@@ -137,7 +134,7 @@ class _$ConfirmDialogImpl implements _ConfirmDialog {
   @JsonKey()
   final String message;
   @override
-  final Function? onPressed;
+  final Func0<void>? onPressed;
 
   @override
   String toString() {
@@ -168,11 +165,11 @@ class _$ConfirmDialogImpl implements _ConfirmDialog {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String message, Function? onPressed)
+    required TResult Function(String message, Func0<void>? onPressed)
         confirmDialog,
-    required TResult Function(String message, Function? onRetryPressed)
+    required TResult Function(String message, Func0<void>? onRetryPressed)
         errorWithRetryDialog,
-    required TResult Function() requiredLoginDialog,
+    required TResult Function(Widget? child, double? height) bottomDialog,
   }) {
     return confirmDialog(message, onPressed);
   }
@@ -180,10 +177,10 @@ class _$ConfirmDialogImpl implements _ConfirmDialog {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String message, Function? onPressed)? confirmDialog,
-    TResult? Function(String message, Function? onRetryPressed)?
+    TResult? Function(String message, Func0<void>? onPressed)? confirmDialog,
+    TResult? Function(String message, Func0<void>? onRetryPressed)?
         errorWithRetryDialog,
-    TResult? Function()? requiredLoginDialog,
+    TResult? Function(Widget? child, double? height)? bottomDialog,
   }) {
     return confirmDialog?.call(message, onPressed);
   }
@@ -191,10 +188,10 @@ class _$ConfirmDialogImpl implements _ConfirmDialog {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String message, Function? onPressed)? confirmDialog,
-    TResult Function(String message, Function? onRetryPressed)?
+    TResult Function(String message, Func0<void>? onPressed)? confirmDialog,
+    TResult Function(String message, Func0<void>? onRetryPressed)?
         errorWithRetryDialog,
-    TResult Function()? requiredLoginDialog,
+    TResult Function(Widget? child, double? height)? bottomDialog,
     required TResult orElse(),
   }) {
     if (confirmDialog != null) {
@@ -208,7 +205,7 @@ class _$ConfirmDialogImpl implements _ConfirmDialog {
   TResult map<TResult extends Object?>({
     required TResult Function(_ConfirmDialog value) confirmDialog,
     required TResult Function(_ErrorWithRetryDialog value) errorWithRetryDialog,
-    required TResult Function(_RequiredLoginDialog value) requiredLoginDialog,
+    required TResult Function(_bottomDialog value) bottomDialog,
   }) {
     return confirmDialog(this);
   }
@@ -218,7 +215,7 @@ class _$ConfirmDialogImpl implements _ConfirmDialog {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ConfirmDialog value)? confirmDialog,
     TResult? Function(_ErrorWithRetryDialog value)? errorWithRetryDialog,
-    TResult? Function(_RequiredLoginDialog value)? requiredLoginDialog,
+    TResult? Function(_bottomDialog value)? bottomDialog,
   }) {
     return confirmDialog?.call(this);
   }
@@ -228,7 +225,7 @@ class _$ConfirmDialogImpl implements _ConfirmDialog {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ConfirmDialog value)? confirmDialog,
     TResult Function(_ErrorWithRetryDialog value)? errorWithRetryDialog,
-    TResult Function(_RequiredLoginDialog value)? requiredLoginDialog,
+    TResult Function(_bottomDialog value)? bottomDialog,
     required TResult orElse(),
   }) {
     if (confirmDialog != null) {
@@ -240,10 +237,11 @@ class _$ConfirmDialogImpl implements _ConfirmDialog {
 
 abstract class _ConfirmDialog implements AppPopupInfo {
   const factory _ConfirmDialog(
-      {final String message, final Function? onPressed}) = _$ConfirmDialogImpl;
+      {final String message,
+      final Func0<void>? onPressed}) = _$ConfirmDialogImpl;
 
   String get message;
-  Function? get onPressed;
+  Func0<void>? get onPressed;
 
   /// Create a copy of AppPopupInfo
   /// with the given fields replaced by the non-null parameter values.
@@ -258,7 +256,7 @@ abstract class _$$ErrorWithRetryDialogImplCopyWith<$Res> {
           $Res Function(_$ErrorWithRetryDialogImpl) then) =
       __$$ErrorWithRetryDialogImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String message, Function? onRetryPressed});
+  $Res call({String message, Func0<void>? onRetryPressed});
 }
 
 /// @nodoc
@@ -285,7 +283,7 @@ class __$$ErrorWithRetryDialogImplCopyWithImpl<$Res>
       onRetryPressed: freezed == onRetryPressed
           ? _value.onRetryPressed
           : onRetryPressed // ignore: cast_nullable_to_non_nullable
-              as Function?,
+              as Func0<void>?,
     ));
   }
 }
@@ -299,7 +297,7 @@ class _$ErrorWithRetryDialogImpl implements _ErrorWithRetryDialog {
   @JsonKey()
   final String message;
   @override
-  final Function? onRetryPressed;
+  final Func0<void>? onRetryPressed;
 
   @override
   String toString() {
@@ -332,11 +330,11 @@ class _$ErrorWithRetryDialogImpl implements _ErrorWithRetryDialog {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String message, Function? onPressed)
+    required TResult Function(String message, Func0<void>? onPressed)
         confirmDialog,
-    required TResult Function(String message, Function? onRetryPressed)
+    required TResult Function(String message, Func0<void>? onRetryPressed)
         errorWithRetryDialog,
-    required TResult Function() requiredLoginDialog,
+    required TResult Function(Widget? child, double? height) bottomDialog,
   }) {
     return errorWithRetryDialog(message, onRetryPressed);
   }
@@ -344,10 +342,10 @@ class _$ErrorWithRetryDialogImpl implements _ErrorWithRetryDialog {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String message, Function? onPressed)? confirmDialog,
-    TResult? Function(String message, Function? onRetryPressed)?
+    TResult? Function(String message, Func0<void>? onPressed)? confirmDialog,
+    TResult? Function(String message, Func0<void>? onRetryPressed)?
         errorWithRetryDialog,
-    TResult? Function()? requiredLoginDialog,
+    TResult? Function(Widget? child, double? height)? bottomDialog,
   }) {
     return errorWithRetryDialog?.call(message, onRetryPressed);
   }
@@ -355,10 +353,10 @@ class _$ErrorWithRetryDialogImpl implements _ErrorWithRetryDialog {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String message, Function? onPressed)? confirmDialog,
-    TResult Function(String message, Function? onRetryPressed)?
+    TResult Function(String message, Func0<void>? onPressed)? confirmDialog,
+    TResult Function(String message, Func0<void>? onRetryPressed)?
         errorWithRetryDialog,
-    TResult Function()? requiredLoginDialog,
+    TResult Function(Widget? child, double? height)? bottomDialog,
     required TResult orElse(),
   }) {
     if (errorWithRetryDialog != null) {
@@ -372,7 +370,7 @@ class _$ErrorWithRetryDialogImpl implements _ErrorWithRetryDialog {
   TResult map<TResult extends Object?>({
     required TResult Function(_ConfirmDialog value) confirmDialog,
     required TResult Function(_ErrorWithRetryDialog value) errorWithRetryDialog,
-    required TResult Function(_RequiredLoginDialog value) requiredLoginDialog,
+    required TResult Function(_bottomDialog value) bottomDialog,
   }) {
     return errorWithRetryDialog(this);
   }
@@ -382,7 +380,7 @@ class _$ErrorWithRetryDialogImpl implements _ErrorWithRetryDialog {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ConfirmDialog value)? confirmDialog,
     TResult? Function(_ErrorWithRetryDialog value)? errorWithRetryDialog,
-    TResult? Function(_RequiredLoginDialog value)? requiredLoginDialog,
+    TResult? Function(_bottomDialog value)? bottomDialog,
   }) {
     return errorWithRetryDialog?.call(this);
   }
@@ -392,7 +390,7 @@ class _$ErrorWithRetryDialogImpl implements _ErrorWithRetryDialog {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ConfirmDialog value)? confirmDialog,
     TResult Function(_ErrorWithRetryDialog value)? errorWithRetryDialog,
-    TResult Function(_RequiredLoginDialog value)? requiredLoginDialog,
+    TResult Function(_bottomDialog value)? bottomDialog,
     required TResult orElse(),
   }) {
     if (errorWithRetryDialog != null) {
@@ -405,10 +403,10 @@ class _$ErrorWithRetryDialogImpl implements _ErrorWithRetryDialog {
 abstract class _ErrorWithRetryDialog implements AppPopupInfo {
   const factory _ErrorWithRetryDialog(
       {final String message,
-      final Function? onRetryPressed}) = _$ErrorWithRetryDialogImpl;
+      final Func0<void>? onRetryPressed}) = _$ErrorWithRetryDialogImpl;
 
   String get message;
-  Function? get onRetryPressed;
+  Func0<void>? get onRetryPressed;
 
   /// Create a copy of AppPopupInfo
   /// with the given fields replaced by the non-null parameter values.
@@ -418,78 +416,112 @@ abstract class _ErrorWithRetryDialog implements AppPopupInfo {
 }
 
 /// @nodoc
-abstract class _$$RequiredLoginDialogImplCopyWith<$Res> {
-  factory _$$RequiredLoginDialogImplCopyWith(_$RequiredLoginDialogImpl value,
-          $Res Function(_$RequiredLoginDialogImpl) then) =
-      __$$RequiredLoginDialogImplCopyWithImpl<$Res>;
+abstract class _$$bottomDialogImplCopyWith<$Res> {
+  factory _$$bottomDialogImplCopyWith(
+          _$bottomDialogImpl value, $Res Function(_$bottomDialogImpl) then) =
+      __$$bottomDialogImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Widget? child, double? height});
 }
 
 /// @nodoc
-class __$$RequiredLoginDialogImplCopyWithImpl<$Res>
-    extends _$AppPopupInfoCopyWithImpl<$Res, _$RequiredLoginDialogImpl>
-    implements _$$RequiredLoginDialogImplCopyWith<$Res> {
-  __$$RequiredLoginDialogImplCopyWithImpl(_$RequiredLoginDialogImpl _value,
-      $Res Function(_$RequiredLoginDialogImpl) _then)
+class __$$bottomDialogImplCopyWithImpl<$Res>
+    extends _$AppPopupInfoCopyWithImpl<$Res, _$bottomDialogImpl>
+    implements _$$bottomDialogImplCopyWith<$Res> {
+  __$$bottomDialogImplCopyWithImpl(
+      _$bottomDialogImpl _value, $Res Function(_$bottomDialogImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of AppPopupInfo
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? child = freezed,
+    Object? height = freezed,
+  }) {
+    return _then(_$bottomDialogImpl(
+      child: freezed == child
+          ? _value.child
+          : child // ignore: cast_nullable_to_non_nullable
+              as Widget?,
+      height: freezed == height
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$RequiredLoginDialogImpl implements _RequiredLoginDialog {
-  const _$RequiredLoginDialogImpl();
+class _$bottomDialogImpl implements _bottomDialog {
+  const _$bottomDialogImpl({this.child, this.height});
+
+  @override
+  final Widget? child;
+  @override
+  final double? height;
 
   @override
   String toString() {
-    return 'AppPopupInfo.requiredLoginDialog()';
+    return 'AppPopupInfo.bottomDialog(child: $child, height: $height)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RequiredLoginDialogImpl);
+            other is _$bottomDialogImpl &&
+            (identical(other.child, child) || other.child == child) &&
+            (identical(other.height, height) || other.height == height));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, child, height);
+
+  /// Create a copy of AppPopupInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$bottomDialogImplCopyWith<_$bottomDialogImpl> get copyWith =>
+      __$$bottomDialogImplCopyWithImpl<_$bottomDialogImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String message, Function? onPressed)
+    required TResult Function(String message, Func0<void>? onPressed)
         confirmDialog,
-    required TResult Function(String message, Function? onRetryPressed)
+    required TResult Function(String message, Func0<void>? onRetryPressed)
         errorWithRetryDialog,
-    required TResult Function() requiredLoginDialog,
+    required TResult Function(Widget? child, double? height) bottomDialog,
   }) {
-    return requiredLoginDialog();
+    return bottomDialog(child, height);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String message, Function? onPressed)? confirmDialog,
-    TResult? Function(String message, Function? onRetryPressed)?
+    TResult? Function(String message, Func0<void>? onPressed)? confirmDialog,
+    TResult? Function(String message, Func0<void>? onRetryPressed)?
         errorWithRetryDialog,
-    TResult? Function()? requiredLoginDialog,
+    TResult? Function(Widget? child, double? height)? bottomDialog,
   }) {
-    return requiredLoginDialog?.call();
+    return bottomDialog?.call(child, height);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String message, Function? onPressed)? confirmDialog,
-    TResult Function(String message, Function? onRetryPressed)?
+    TResult Function(String message, Func0<void>? onPressed)? confirmDialog,
+    TResult Function(String message, Func0<void>? onRetryPressed)?
         errorWithRetryDialog,
-    TResult Function()? requiredLoginDialog,
+    TResult Function(Widget? child, double? height)? bottomDialog,
     required TResult orElse(),
   }) {
-    if (requiredLoginDialog != null) {
-      return requiredLoginDialog();
+    if (bottomDialog != null) {
+      return bottomDialog(child, height);
     }
     return orElse();
   }
@@ -499,9 +531,9 @@ class _$RequiredLoginDialogImpl implements _RequiredLoginDialog {
   TResult map<TResult extends Object?>({
     required TResult Function(_ConfirmDialog value) confirmDialog,
     required TResult Function(_ErrorWithRetryDialog value) errorWithRetryDialog,
-    required TResult Function(_RequiredLoginDialog value) requiredLoginDialog,
+    required TResult Function(_bottomDialog value) bottomDialog,
   }) {
-    return requiredLoginDialog(this);
+    return bottomDialog(this);
   }
 
   @override
@@ -509,9 +541,9 @@ class _$RequiredLoginDialogImpl implements _RequiredLoginDialog {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ConfirmDialog value)? confirmDialog,
     TResult? Function(_ErrorWithRetryDialog value)? errorWithRetryDialog,
-    TResult? Function(_RequiredLoginDialog value)? requiredLoginDialog,
+    TResult? Function(_bottomDialog value)? bottomDialog,
   }) {
-    return requiredLoginDialog?.call(this);
+    return bottomDialog?.call(this);
   }
 
   @override
@@ -519,16 +551,26 @@ class _$RequiredLoginDialogImpl implements _RequiredLoginDialog {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ConfirmDialog value)? confirmDialog,
     TResult Function(_ErrorWithRetryDialog value)? errorWithRetryDialog,
-    TResult Function(_RequiredLoginDialog value)? requiredLoginDialog,
+    TResult Function(_bottomDialog value)? bottomDialog,
     required TResult orElse(),
   }) {
-    if (requiredLoginDialog != null) {
-      return requiredLoginDialog(this);
+    if (bottomDialog != null) {
+      return bottomDialog(this);
     }
     return orElse();
   }
 }
 
-abstract class _RequiredLoginDialog implements AppPopupInfo {
-  const factory _RequiredLoginDialog() = _$RequiredLoginDialogImpl;
+abstract class _bottomDialog implements AppPopupInfo {
+  const factory _bottomDialog({final Widget? child, final double? height}) =
+      _$bottomDialogImpl;
+
+  Widget? get child;
+  double? get height;
+
+  /// Create a copy of AppPopupInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$bottomDialogImplCopyWith<_$bottomDialogImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

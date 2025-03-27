@@ -10,18 +10,14 @@ class AppRouter extends RootStackRouter {
 
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(path: '/', page: LoginRoute.page),
+        AutoRoute(path: '/', page: MapRoute.page),
+        AutoRoute(page: CountryDetailsRoute.page)
       ];
 }
 
-@RoutePage(name: 'ProfileTab')
+@RoutePage(name: 'ListTab')
 class ProfileTabScreen extends AutoRouter {
   const ProfileTabScreen({super.key});
-}
-
-@RoutePage(name: 'SessionTab')
-class SessionTabScreen extends AutoRouter {
-  const SessionTabScreen({super.key});
 }
 
 @RoutePage(name: 'MapTab')

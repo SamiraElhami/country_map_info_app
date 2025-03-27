@@ -13,17 +13,27 @@ class RemoteException extends AppException {
   final ServerError? serverError;
   final Object? rootException;
 
-  int get generalServerStatusCode =>
-      serverError?.generalServerStatusCode ??
-      serverError?.errors.first.serverStatusCode ??
-      -1;
+  int get generalServerStatusCode => serverError != null
+      ? serverError?.generalServerStatusCode ??
+          (serverError!.errors.isNotEmpty
+              ? serverError?.errors.first.serverStatusCode
+              : -1) ??
+          -1
+      : -1;
 
-  String? get generalServerErrorId =>
-      serverError?.generalServerErrorId ??
-      serverError?.errors.first.serverErrorId;
+  String? get generalServerErrorId => serverError != null
+      ? serverError?.generalServerErrorId ??
+          (serverError!.errors.isNotEmpty
+              ? serverError?.errors.first.serverErrorId
+              : null)
+      : null;
 
-  String? get generalServerMessage =>
-      serverError?.generalMessage ?? serverError?.errors.first.message;
+  String? get generalServerMessage => serverError != null
+      ? serverError?.generalMessage ??
+          (serverError!.errors.isNotEmpty
+              ? serverError?.errors.first.message
+              : null)
+      : null;
 
   @override
   String toString() =>
