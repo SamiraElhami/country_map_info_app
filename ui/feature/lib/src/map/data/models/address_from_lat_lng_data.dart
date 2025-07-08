@@ -4,10 +4,10 @@ part 'address_from_lat_lng_data.freezed.dart';
 part 'address_from_lat_lng_data.g.dart';
 
 @freezed
-class AddressFromLatLngData with _$AddressFromLatLngData {
+abstract class AddressFromLatLngData with _$AddressFromLatLngData {
   const factory AddressFromLatLngData({
-    @JsonKey(name: 'results') List<AddressLatLngResult>? results,
-    @JsonKey(name: 'status') String? status,
+   List<AddressLatLngResult>? results,
+    String? status,
     @JsonKey(name: 'plus_code') PlusCode? plusCode,
   }) = _AddressFromLatLngData;
 

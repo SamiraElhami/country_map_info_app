@@ -1,1 +1,0 @@
-/Users/samiraelhamy/Desktop/sample_proj/country_map_info_app/ui/app/build/app/intermediates/cxx/Debug/4c3a6aq4/obj/arm64-v8a
